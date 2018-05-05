@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <assert.h>
 #include "lexer.h"
-#include "list.h" 
 
 void parse_S(int h, int* r);
 void parse_X(int h, int* r);
