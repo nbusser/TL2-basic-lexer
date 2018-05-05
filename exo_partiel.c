@@ -90,7 +90,7 @@ int main() {
         printf("Simple LL(1) parser\n\n") ;
         printf("Enter a word (recognized) finished by '$'\n") ;
         printf("(Enter 'q' to quit)\n");
-        current = next(&att); /* init of current */
+        current = next(); /* init of current */
         
         int r = 0;
         parse_S(0, &r);

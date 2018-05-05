@@ -1,4 +1,4 @@
-# Simple lexer
+# Simple parser
 
 This project is a simple test for a LL(1) grammar parser.
 
