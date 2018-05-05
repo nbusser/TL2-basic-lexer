@@ -1,6 +1,6 @@
 # Simple lexer
 
-This project is a simple test for a LL(1) grammar lexer.
+This project is a simple test for a LL(1) grammar parser.
 
 #### BNF:
 'Epsilon' means empty set  

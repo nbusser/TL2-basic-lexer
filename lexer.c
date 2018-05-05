@@ -35,15 +35,13 @@ static void update_current() {
         current = fgetc(stdin);
 }
 
-/* Boolean variable indicating whether "current" has been initialized or not.
+/* Boolean variable indicating whether "current" has been initialized or not
    NB: this variable is only used in "next".
  */ 
 static int init = 0;
 
 token next() {
         if (! init) {
-                /* A CORRIGER: enlever ligne ci-dessous */
-                printf("next: VERSION FOURNIE A CORRIGER !\n");
                 update_current();
                 init = 1;
         }
@@ -60,6 +58,8 @@ token next() {
                         return c;
                 case '$':
                         return END;
+                default:
+                        printf("ERROR: invalid charaxter %c\n", current);
                 }
         }
 }

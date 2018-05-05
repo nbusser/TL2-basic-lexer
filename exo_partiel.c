@@ -20,7 +20,14 @@ int max(int a, int b)
 
 int power2(int h)
 {
-  return h*h;
+    int res = 1;
+    int i;
+    for(i = 0 ; i < h ; i++)
+    {
+        res *= 2;
+    }
+
+    return res;
 }
 
 /* parsing of token */
@@ -30,7 +37,7 @@ void parse_token(token expected) {
                 display(expected);
                 printf(" but found ");
                 display(current);
-                printf("\n");
+                printf("\nThe word doesn't belong to the langage\n");
                 exit(1);
         }
         if (current != END) {
@@ -45,7 +52,7 @@ void parse_S(int h, int* r) {
         parse_token(a);
         parse_X(h, &r1);
         parse_Y(h, &r2);
-    
+        
         *r = max(r1, r2);
     }
     else
@@ -63,7 +70,6 @@ void parse_X(int h, int* r) {
     else
     {
         *r = 3*h;
-        parse_token(current);
     }
 }
 
@@ -77,19 +83,19 @@ void parse_Y(int h, int *r) {
     else
     {
         *r = power2(h);
-        parse_token(current);
     }
 }
 
 int main() {
-        printf("Exo du partiel.\n//\n") ;
-        printf("Faut entrer un mot reconnu par le langage et qui se finit par $\n") ;
-        current = next(&att); /* init de current */
+        printf("Simple LL(1) parser\n\n") ;
+        printf("Please enter a word (recognized) finished by $\n") ;
+        current = next(&att); /* init of current */
         
         int r = 0;
         parse_S(0, &r);
-        printf("Trouvé %d", r);
+        printf("The word belongs to the langage\n");
+        printf("Final attribute: %d\n\n", r);
         
-        printf("Fin\n") ;
+        printf("End of input\n") ;
         return 0;
 }
