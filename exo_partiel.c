@@ -88,13 +88,14 @@ void parse_Y(int h, int *r) {
 
 int main() {
         printf("Simple LL(1) parser\n\n") ;
-        printf("Please enter a word (recognized) finished by $\n") ;
+        printf("Enter a word (recognized) finished by '$'\n") ;
+        printf("(Enter 'q' to quit)\n");
         current = next(&att); /* init of current */
         
         int r = 0;
         parse_S(0, &r);
         printf("The word belongs to the langage\n");
-        printf("Final attribute: %d\n\n", r);
+        printf("Output attribute: %d\n\n", r);
         
         printf("End of input\n") ;
         return 0;

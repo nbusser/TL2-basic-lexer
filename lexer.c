@@ -58,8 +58,18 @@ token next() {
                         return c;
                 case '$':
                         return END;
+                case 'q':
+                        printf("Bye\n");
+                        exit(0);
+                case ' ':
+                        update_current();
+                        break;
+                case '\n':
+                        update_current();
+                        break;
                 default:
-                        printf("ERROR: invalid charaxter %c\n", current);
+                        printf("WARNING: ignoring invalid character '%c'\n", current);
+                        update_current();
                 }
         }
 }
